@@ -1,0 +1,61 @@
+{
+  "name": "vsce-p7d-markdown-it-renderer-inline-text",
+  "displayName": "vsce-p7d-markdown-it-renderer-inline-text",
+  "description": "adds Ruby(double angle bracket), Star comment(★) in markdown preview html.",
+  "license": "MIT",
+  "version": "0.1.0",
+  "publisher": "peaceroad",
+  "repository": {
+    "url": "https://https://github.com/peaceroad/vsce-p7d-markdown-it-renderer-inline-text"
+  },
+  "engines": {
+    "vscode": "^1.79.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "capabilities": {
+    "virtualWorkspaces": true,
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.previewStyles": [
+      "./style/style.css"
+    ],
+
+    "configuration": {
+      "type": "object",
+      "title": "p7d-markdown-it-renderer-inline-text",
+      "properties": {
+        "p7dMarkdownItRendererInlineText.disableRuby": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable ruby function."
+        },
+        "p7dMarkdownItRendererInlineText.disableStarComment": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable star comment function."
+        },
+        "p7dMarkdownItRendererInlineText.dsiableStarCommentLine": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable star comment line function."
+        },
+        "p7dMarkdownItRendererInlineText.deleteStarComment": {
+          "type": "boolean",
+          "default": false,
+          "description": "Delete star comment on HTML preview."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@peaceroad/markdown-it-renderer-inline-text": "^0.1.4"
+  }
+}

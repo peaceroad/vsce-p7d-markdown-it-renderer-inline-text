@@ -1,0 +1,14 @@
+.star-comment {
+  color: darkred;
+}
+p:has(.star-comment-line) {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  .star-comment {
+    color: indianred;
+  }
+}
+rt {
+  font-size: 0.65em;
+}
