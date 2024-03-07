@@ -1,9 +1,9 @@
 {
-  "name": "vsce-p7d-markdown-it-renderer-inline-text",
-  "displayName": "vsce-p7d-markdown-it-renderer-inline-text",
+  "name": "p7d-markdown-it-renderer-inline-text",
+  "displayName": "p7d-markdown-it-renderer-inline-text",
   "description": "adds Ruby(double angle bracket), Star comment(★) in markdown preview html.",
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "peaceroad",
   "repository": {
     "url": "https://github.com/peaceroad/vsce-p7d-markdown-it-renderer-inline-text"
