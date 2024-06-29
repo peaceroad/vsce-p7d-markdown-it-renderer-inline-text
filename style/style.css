@@ -10,5 +10,6 @@ p:has(.star-comment-line) {
   }
 }
 rt {
-  font-size: 0.65em;
+  font-size: 0.625em;
+  padding-block-end: 2px;
 }

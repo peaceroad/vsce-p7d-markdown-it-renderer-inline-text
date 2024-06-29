@@ -2,13 +2,14 @@
 
 This extension gives the following expression to the Markdown preview.
 
-- Ruby (double angle bracket)
-- Star comment (★)
+- Ruby (`《》`)
+- Star comment (`★`)
 
 ## Ruby
 
 - Match: `(<ruby>)?([\p{sc=Han}0-9A-Za-z.\-_]+)《([^》]+?)》(<\/ruby>)?/u`
 - Replace: `<ruby>$2<rp>《</rp><rt>$3</rt><rp>》</rp></ruby>`
+
 
 ```
 [Markdown]

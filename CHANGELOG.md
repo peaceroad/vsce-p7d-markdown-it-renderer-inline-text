@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.1.4] - 2024-06-29
+
+0.1.3 was published by mistake... please update to 0.1.4.
+
+- Add color style of star comment / ruby in vscode editor
+    - Please note that star comment is different from Markdown's HTML preview conversion process. It's basically fine, but currently some parts are failing.
+    - Added option to remove color style.
+
 ## [0.1.2] - 2024-03-07
 
 - Fix name
