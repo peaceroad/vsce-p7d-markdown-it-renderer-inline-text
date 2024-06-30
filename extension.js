@@ -71,8 +71,8 @@ async function activate (context) {
     const matchTexts = text.match(/(?<=(?:^|\r?\n))([`~]){3,}[\s\S]*?\r?\n *\1/g)
 
     //const scReg = /(?<!(?:^|[^\\])\\)★[^★\n]*?(?:(?<![^\\]\\)★|\r?\n *(?<!^(?:[-+*] )[\s\S]*?)\r?\n *[^★\n]*?(?<![^\\]\\)★)/gm
-    const scReg = /(?<!(?:^|[^\\])\\)★[^★\n]*?(?:(?<![^\\]\\)★|\r?\n *(?<!^(?:[-+*] ))[^★\n]*?(?:(?!\r?\n *)\r?\n *(?<!^(?:[-+*] ))[^★\n]*?)*?(?<![^\\]\\)★)/gm
-    const scStartReg = /(?<=^|\r?\n *\r?\n) {0,3}(?<![^\\]\\)★[\s\S]*?(?=\r?\n *(?:\r?\n|$|(?:[-+*] )))/g
+    const scReg = /(?<!(?:^|[^\\])\\)★[^★\n]*?(?:(?<![^\\]\\)★|\r?\n *[^★\n]*?(?:(?!\r?\n *)\r?\n *[^★\n]*?)*?(?<![^\\]\\)★)/g
+    const scStartReg = /(?<=^|\r?\n *\r?\n) {0,3}(?<![^\\]\\)★[\s\S]*?(?=\r?\n *(?:\r?\n|$))/g
     const rubyRtReg = /(<ruby>)?([\p{sc=Han}0-9A-Za-z.\-_]+)《([^》]+?)》(<\/ruby>)?/gu
 
     let matchStarComment
@@ -131,31 +131,17 @@ async function activate (context) {
     editor.setDecorations(rubyRtStyle, rubyRtDecorations)
   }
 
-  updateDecorations(window.activeTextEditor, starCommentStyle, rubyRtStyle)
-
-  window.onDidChangeActiveTextEditor(editor => {
-    if (editor) updateDecorations(editor, starCommentStyle, rubyRtStyle)
-  }, null, context.subscriptions)
-
-  workspace.onDidChangeTextDocument(event => {
-    if (window.activeTextEditor && event.document === window.activeTextEditor.document) {
-      updateDecorations(window.activeTextEditor, starCommentStyle, rubyRtStyle)
-    }
-  }, null, context.subscriptions)
-
-
-  updateDecorations(window.activeTextEditor, starCommentStyle, rubyRtStyle)
-
-  window.onDidChangeActiveTextEditor(editor => {
-    if (editor) updateDecorations(editor, starCommentStyle, rubyRtStyle)
-  }, null, context.subscriptions)
-
-  workspace.onDidChangeTextDocument(event => {
-    if (window.activeTextEditor && event.document === window.activeTextEditor.document) {
-      updateDecorations(window.activeTextEditor, starCommentStyle, rubyRtStyle)
-    }
-  }, null, context.subscriptions)
-
+  if (!exOption.disableEditorStyle) {
+    updateDecorations(window.activeTextEditor, starCommentStyle, rubyRtStyle)
+    window.onDidChangeActiveTextEditor(editor => {
+      if (editor) updateDecorations(editor, starCommentStyle, rubyRtStyle)
+    }, null, context.subscriptions)
+    workspace.onDidChangeTextDocument(event => {
+      if (window.activeTextEditor && event.document === window.activeTextEditor.document) {
+        updateDecorations(window.activeTextEditor, starCommentStyle, rubyRtStyle)
+      }
+    }, null, context.subscriptions)
+  }
 
   return {
     extendMarkdownIt(md) {
