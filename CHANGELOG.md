@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.6] - 2024-07-10
+
+- hotfix convert string with <>&
+
 ## [0.1.5] - 2024-06-30
 
 - Slightly tweaked the style of star comments on the edit screen. It's still tricky for a while.
