@@ -12,7 +12,7 @@ async function activate (context) {
     disableStarComment: config.get('disableStarComment'),
     disableStarCommentLine: config.get('disableStarCommentLine'),
     deleteStarComment: config.get('deleteStarComment'),
-    disableEditorStyle: config.get('disableEditorStyle'),
+    disableEditorStyle: !config.get('disableEditorStyle'),
     starCommentLightColor: config.get('starCommentLightColor') ? config.get('starCommentLightColor') : 'rgba(139, 0, 0, 1)',
     starCommentDarkColor: config.get('starCommentDarkColor') ? config.get('starCommentDarkColor') : 'rgba(205, 92, 92, 1)',
     rubyLightColor: config.get('rubyLightColor') ? config.get('rubyLightColor') : 'rgba(128, 128, 0, 1)',
