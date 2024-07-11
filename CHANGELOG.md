@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.7] - 2024-07-11
+
+- Fix editor default style option.
+
 ## [0.1.6] - 2024-07-10
 
 - hotfix convert string with <>&
