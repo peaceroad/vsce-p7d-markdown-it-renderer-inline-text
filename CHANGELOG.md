@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.8] - 2024-07-23
+
+- hotfix convert string with <> </> <e/f>
+
 ## [0.1.7] - 2024-07-11
 
 - Fix editor default style option.
